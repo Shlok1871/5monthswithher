@@ -5,17 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Gallery</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #fefefe; }
-    h1 { margin-top: 20px; }
-    .gallery img { width: 250px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6f6;
+      text-align: center;
+    }
+    h1 {
+      color: #c94f7c;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
-  <h1>Our Memories 💕</h1>
+  <h1>Our Memories 💖</h1>
   <div class="gallery">
-    <img src="images/photo1.jpg" alt="Memory 1">
-    <img src="images/photo2.jpg" alt="Memory 2">
-    <img src="images/photo3.jpg" alt="Memory 3">
-  </div>
-</body>
-</html>
+    <img
