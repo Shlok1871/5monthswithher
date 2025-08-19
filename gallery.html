@@ -7,55 +7,68 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #fdf6f6;
+      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
       text-align: center;
-      margin: 0;
-      padding: 0;
+      position: relative;
+      overflow-x: hidden;
     }
+
     h1 {
       color: #c94f7c;
-      margin: 20px 0;
+      font-size: 28px;
+      margin-top: 20px;
     }
+
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
     }
+
     .gallery img {
       width: 100%;
-      height: auto;
       border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
+
     .gallery img:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Hello Kitty bows in background */
+    .bow {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url('https://i.imgur.com/rB3Xqyk.png') no-repeat center/contain;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: float 12s infinite linear;
+    }
+
+    .bow1 { top: 10%; left: 5%; animation-duration: 18s; }
+    .bow2 { top: 40%; left: 80%; animation-duration: 15s; }
+    .bow3 { top: 70%; left: 20%; animation-duration: 20s; }
+    .bow4 { top: 85%; left: 60%; animation-duration: 22s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(15deg); }
+      100% { transform: translateY(0) rotate(0deg); }
     }
   </style>
 </head>
 <body>
+  <!-- Floating bows -->
+  <div class="bow bow1"></div>
+  <div class="bow bow2"></div>
+  <div class="bow bow3"></div>
+  <div class="bow bow4"></div>
+
   <h1>Cutu Pictures 💖</h1>
+
   <div class="gallery">
     <!-- Old images -->
-    <img src="IMG_0163.jpeg" alt="Memory 1">
-    <img src="IMG_0618.jpeg" alt="Memory 2">
-    <img src="IMG_1450.jpeg" alt="Memory 3">
-    <img src="lp_image.jpeg" alt="Memory 4">
-    <img src="631D3DBA-DF93-4BD1-8B84-3DD34B2C73F2.jpeg" alt="Memory 5">
-    <img src="IMG_0252.jpeg" alt="Memory 6">
-
-    <!-- New images -->
-    <img src="nav1.jpeg" alt="Memory 7">
-    <img src="nav2.jpeg" alt="Memory 8">
-    <img src="nav3.jpeg" alt="Memory 9">
-    <img src="nav4.jpeg" alt="Memory 10">
-    <img src="nav5.jpeg" alt="Memory 11">
-    <img src="nav6.jpeg" alt="Memory 12">
-    <img src="nav7.jpeg" alt="Memory 13">
-  </div>
-</body>
-</html>
+    <img src="IMG_0_
