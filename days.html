@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days Together 🎀</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe0ec, #fff7fb, #e6f7ff);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 64px;
+      color: #d63384;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 12px rgba(214,51,132,0.2);
+      animation: fadeDown 1.2s ease;
+    }
+
+    .counter-box {
+      background: rgba(255,255,255,0.7);
+      padding: 35px 45px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      backdrop-filter: blur(12px);
+      animation: fadeUp 1.2s ease;
+      max-width: 700px;
+    }
+
+    #counter {
+      font-size: 32px;
+      color: #c2185b;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      font-size: 20px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255,105,180,0.6);
+      font-size: 24px;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(-120vh);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      #counter {
+        font-size: 24px;
+      }
+
+      .message {
+        font-size: 17px;
+      }
+
+      .counter-box {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Days Together 🎀</h1>
+
+  <div class="counter-box">
+    <div id="counter"></div>
+
+    <div class="message">
+      Every single day with you feels like my favorite memory 💖<br>
+      And somehow, every new day becomes even more beautiful.
+    </div>
+  </div>
+
+  <script>
+    const startDate = new Date("2025-05-19");
+    const today = new Date();
+
+    const diffTime = today - startDate;
+    const daysTogether = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    document.getElementById("counter").innerHTML =
+      `💞 ${daysTogether} Days Together 💞`;
+
+    // Floating hearts
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heart.style.fontSize = (18 + Math.random() * 20) + "px";
+
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
